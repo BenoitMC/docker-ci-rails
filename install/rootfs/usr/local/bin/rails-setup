@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+source ~/.profile
+postgresql-reset-db
+source rbenv-setup
+ruby-install $(cat .ruby-version)
+bundle-install
+rails-schema-load

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+ruby_version=$1
+
+_title "Ruby install : $ruby_version"
+
+if [[ $(rbenv versions) =~ $ruby_version ]]; then
+  echo "Ruby $ruby_version already installed."
+else
+  (cd $RBENV_ROOT && git pull)
+  (cd $RBENV_ROOT/plugins/ruby-build && git pull)
+  rbenv install -s $ruby_version
+fi
+
+gem install bundler

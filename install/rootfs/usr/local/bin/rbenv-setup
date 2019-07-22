@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -e
+
+_title "rbenv setup"
+
+if [[ "$RBENV_ROOT" = "" ]]; then
+  export RBENV_ROOT="$HOME/.rbenv"
+fi
+
+echo "RBENV_ROOT = $RBENV_ROOT"
+
+if [[ ! -e $RBENV_ROOT ]]; then
+  git clone https://github.com/sstephenson/rbenv.git $RBENV_ROOT
+  mkdir -p $RBENV_ROOT/plugins
+  git clone https://github.com/sstephenson/ruby-build.git $RBENV_ROOT/plugins/ruby-build
+fi
+
+if [[ ! -e ~/.gemrc ]]; then
+  echo "gem: --no-document" > ~/.gemrc
+fi
+
+if [[ ! "$PATH" =~ "$RBENV_ROOT" ]]; then
+  export PATH="$RBENV_ROOT/bin:$PATH"
+fi
+
+eval "$(rbenv init -)" || true

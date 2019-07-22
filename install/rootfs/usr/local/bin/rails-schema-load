@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+_title "Rails schema loading"
+
+if [[ -e db/schema.rb ]]; then
+  bundle exec rake db:schema:load
+else
+  echo "File 'db/schema.rb' not found. Skipping."
+fi

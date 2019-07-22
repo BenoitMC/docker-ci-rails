@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+
+_title "Coverage"
+
+if [[ ! -e coverage ]]; then
+  echo "Folder 'coverage' not found. Skipping."
+  exit 0
+fi
+
+if [[ "$COVERAGE_CHECK" = "false" ]]; then
+  echo "Coverage check disabled."
+  exit 0
+fi
+
+if [[ $(cat coverage/index.html | grep "lines missed" | head -1) =~ "<b>0</b>" ]]; then
+  echo "App is 100% covered."
+else
+  echo "App is not 100% covered."
+  exit 1
+fi

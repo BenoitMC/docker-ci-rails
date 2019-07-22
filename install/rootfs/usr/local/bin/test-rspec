@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+_title "RSpec"
+
+if [[ -e spec ]]; then
+  rspec-check-file-names
+  bundle exec rspec --tag "~ignore_ci"
+else
+  echo "Folder 'spec' not found. Skipping."
+fi

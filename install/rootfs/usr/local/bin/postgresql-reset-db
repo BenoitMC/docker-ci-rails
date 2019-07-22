@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+_title "Database reset : $POSTGRESQL_DB"
+
+if [[ "$POSTGRESQL_DB" = "" ]]; then
+  echo '$POSTGRESQL_DB is empty.'
+  exit 1
+fi
+
+postgresql-start-if-needed
+psql -c "DROP DATABASE $POSTGRESQL_DB" || true
+psql -c "CREATE DATABASE $POSTGRESQL_DB"

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+_title "Rubocop"
+
+if [[ -e .rubocop.yml ]]; then
+  bundle exec rubocop -P
+else
+  echo "File '.rubocop.yml' not found. Skipping"
+fi

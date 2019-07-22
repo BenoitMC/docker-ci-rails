@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+_title "Cucumber"
+
+if [[ -e features ]]; then
+  bundle exec cucumber --tags "not @ignore_ci"
+else
+  echo "Folder 'features' not found. Skipping."
+fi

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+_title "Gems install"
+
+if [[ "$BUNDLE_JOBS" = "" ]]; then
+  BUNDLE_JOBS=5
+fi
+
+bundle install -j $BUNDLE_JOBS
