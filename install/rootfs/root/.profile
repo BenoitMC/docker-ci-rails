@@ -2,7 +2,7 @@ export EDITOR="nano"
 alias nano="nano -l -e"
 
 function default-env-var() {
-  [[ $(eval "echo \$$1") != "" ]] || eval "export $1=$2"
+  [[ $(eval "echo \$$1") != "" ]] || eval "export $1=\$2"
 }
 
 function _title() {
