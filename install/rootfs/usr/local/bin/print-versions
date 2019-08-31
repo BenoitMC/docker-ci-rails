@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+_title "Docker image versions"
+
+cat /versions

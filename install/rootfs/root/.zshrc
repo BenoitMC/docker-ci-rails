@@ -3,6 +3,7 @@ export ZSH_THEME="risto"
 export CHEATCOLORS=true
 
 plugins=(
+  extract
   zsh-syntax-highlighting
   zsh-autosuggestions
 )

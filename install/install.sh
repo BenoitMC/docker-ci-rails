@@ -8,10 +8,10 @@ apt-get update -y
 apt-get upgrade -y
 
 # Common utilities & dependencies
+apt-get install -y apt-utils apt-transport-https ca-certificates gnupg-agent software-properties-common
 apt-get install -y nano wget curl unzip bzip2 xz-utils git
 apt-get install -y zsh
 apt-get install -y htop rcconf
-apt-get install -y apt-utils apt-transport-https ca-certificates gnupg-agent software-properties-common
 apt-get install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libxml2-dev libxslt-dev libsqlite3-dev
 
 # NodeJS
@@ -37,7 +37,7 @@ apt-get install -y postgresql postgresql-server-dev-all postgis
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-sed -i 's/required/sufficient/' /etc/pam.d/chsh
+sed -i 's/required/sufficient/g' /etc/pam.d/chsh
 chsh -s /usr/bin/zsh
 
 # Docker Image configuration & utilities
@@ -46,3 +46,25 @@ cp -rf rootfs/* /
 # Delete install files
 cd /
 rm -rf /install
+
+# Create versions
+(
+  cat /etc/issue
+  echo
+
+  psql --version
+  (cd /usr/lib/postgresql/11/lib/ && ls postgis-*.so)
+  echo
+
+  echo "nodejs $(nodejs --version)"
+  echo
+
+  google-chrome-stable --version
+  echo
+
+  convert --version | head -1
+  echo
+
+  tesseract --version | head -1
+  echo
+) > /versions

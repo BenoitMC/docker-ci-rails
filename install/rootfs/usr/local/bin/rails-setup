@@ -3,6 +3,7 @@
 set -e
 
 source ~/.profile
+print-versions
 postgresql-reset-db
 source rbenv-setup
 ruby-install $(cat .ruby-version)
