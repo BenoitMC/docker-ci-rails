@@ -2,7 +2,7 @@
 
 set -e
 
-files=$(find spec/**/*.rb | egrep -v "fixtures|support|spec_helper|rails_helper|factories|_spec" | cat)
+files=$(find spec/**/*.rb | egrep -v "fixtures|support|shared_examples|spec_helper|rails_helper|factories|_spec" | cat)
 
 if [[ "$files" != "" ]]; then
   echo "Invalid file names found :"
