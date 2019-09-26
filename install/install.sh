@@ -41,30 +41,11 @@ sed -i 's/required/sufficient/g' /etc/pam.d/chsh
 chsh -s /usr/bin/zsh
 
 # Docker Image configuration & utilities
-cp -rf rootfs/* /
+cp -rf /install/rootfs/* /
 
 # Delete install files
-cd /
 rm -rf /install
 
-# Create versions
-(
-  cat /etc/issue
-  echo
-
-  psql --version
-  (cd /usr/lib/postgresql/11/lib/ && ls postgis-*.so)
-  echo
-
-  echo "nodejs $(nodejs --version)"
-  echo
-
-  google-chrome-stable --version
-  echo
-
-  convert --version | head -1
-  echo
-
-  tesseract --version | head -1
-  echo
-) > /versions
+# Print versions
+source /root/.profile
+print-versions

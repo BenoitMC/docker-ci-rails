@@ -1,6 +1,4 @@
 FROM debian:stable
 COPY ./install /install
-WORKDIR /install
-RUN ./install.sh
+RUN /install/install.sh
 CMD zsh
-WORKDIR /
