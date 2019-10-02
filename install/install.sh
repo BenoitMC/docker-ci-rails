@@ -21,9 +21,6 @@ apt-get install -y nodejs
 apt-get install -y imagemagick ghostscript
 rm /etc/ImageMagick-6/policy.xml
 
-# Tesseract OCR
-apt-get install -y tesseract-ocr-fra tesseract-ocr-eng
-
 # Google Chrome
 sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -

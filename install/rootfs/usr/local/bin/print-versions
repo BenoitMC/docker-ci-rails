@@ -19,6 +19,3 @@ echo
 
 convert --version | head -1
 echo
-
-tesseract --version | head -1
-echo
