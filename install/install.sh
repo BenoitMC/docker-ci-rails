@@ -13,6 +13,7 @@ apt-get install -y nano wget curl unzip bzip2 xz-utils git
 apt-get install -y zsh
 apt-get install -y htop rcconf
 apt-get install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libxml2-dev libxslt-dev libsqlite3-dev
+apt-get install -y default-jdk
 
 # NodeJS
 apt-get install -y nodejs
