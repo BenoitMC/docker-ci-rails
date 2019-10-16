@@ -40,6 +40,7 @@ chsh -s /usr/bin/zsh
 
 # Docker Image configuration & utilities
 cp -rf /install/rootfs/* /
+chmod -R 700 ~/.ssh
 
 # Delete install files
 rm -rf /install
