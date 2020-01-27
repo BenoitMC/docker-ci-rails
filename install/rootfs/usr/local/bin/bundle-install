@@ -8,4 +8,5 @@ if [[ "$BUNDLE_JOBS" = "" ]]; then
   BUNDLE_JOBS=5
 fi
 
+gem install bundler
 bundle install -j $BUNDLE_JOBS
