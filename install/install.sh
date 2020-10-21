@@ -47,4 +47,5 @@ rm -rf /install
 
 # Print versions
 source /root/.profile
+date "+%F %T %z" > /docker-image-datetime
 print-versions

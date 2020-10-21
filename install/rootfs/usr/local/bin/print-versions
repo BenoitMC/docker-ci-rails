@@ -4,6 +4,9 @@ set -e
 
 _title "Docker image versions"
 
+cat /docker-image-datetime
+echo
+
 cat /etc/issue
 echo
 
