@@ -11,7 +11,7 @@ cat /etc/issue
 echo
 
 psql --version
-(cd /usr/lib/postgresql/11/lib/ && ls postgis-*.so)
+(cd /usr/lib/postgresql/*/lib/ && ls postgis-*.so)
 echo
 
 echo "nodejs $(nodejs --version)"

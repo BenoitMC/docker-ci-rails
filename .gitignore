@@ -1,2 +1,3 @@
 install/rootfs/root/.ssh/*
 !install/rootfs/root/.ssh/known_hosts
+.DS_Store

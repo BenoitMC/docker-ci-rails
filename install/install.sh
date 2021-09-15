@@ -24,7 +24,7 @@ apt-get update
 apt-get install -y google-chrome-stable
 
 # PostgreSQL
-apt-get install -y postgresql postgresql-server-dev-all postgis
+apt-get install -y postgresql postgis
 
 # Docker Image configuration & utilities
 cp -rf /install/rootfs/* /
