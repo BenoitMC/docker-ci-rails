@@ -9,3 +9,4 @@ source rbenv-setup
 ruby-install $(cat .ruby-version)
 bundle-install
 rails-schema-load
+bundle exec rake assets:precompile &> /dev/null

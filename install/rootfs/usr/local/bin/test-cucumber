@@ -5,7 +5,6 @@ set -e
 _title "Cucumber"
 
 if [[ -e features ]]; then
-  bundle exec rake assets:precompile &> /dev/null
   bundle exec cucumber --tags "not @ignore_ci"
 else
   echo "Folder 'features' not found. Skipping."

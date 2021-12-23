@@ -11,7 +11,8 @@ apt-get upgrade -y
 apt-get install -y nano apt-utils apt-transport-https gnupg-agent software-properties-common
 
 # NodeJS
-apt-get install -y nodejs
+apt-get install -y nodejs npm
+npm install -global yarn
 
 # ImageMagick
 apt-get install -y imagemagick ghostscript
