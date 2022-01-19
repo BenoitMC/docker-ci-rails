@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+_title "Rails assets precompile"
+
+if [[ -e app/assets ]]; then
+  yarn install
+  bundle exec rake assets:precompile
+else
+  echo "Folder 'app/assets' not found. Skipping."
+fi
