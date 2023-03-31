@@ -14,8 +14,8 @@ apt-get install -y nano apt-utils apt-transport-https gnupg-agent software-prope
 apt-get install -y nodejs npm
 npm install -global yarn
 
-# ImageMagick
-apt-get install -y imagemagick ghostscript
+# Image processing
+apt-get install -y imagemagick ghostscript libvips-tools
 rm /etc/ImageMagick-6/policy.xml
 
 # Google Chrome
